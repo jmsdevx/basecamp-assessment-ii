@@ -26,14 +26,14 @@ message.text = "this message";
 
 // CODE HERE
 var adjustCount = {
-  upVote: function(number1){
-    return number1 += 1;
-  };
-
-  downVote: function(number2){
-    return number2 -= 1;
+  upVote: function(num) {
+    return num += 1;
+  },
+  
+  downVote: function(num) {
+    return num -= 1;
   }
-}
+  }
 
 // #5 Create an array called 'myFriends' with four of your friends names
 
@@ -59,11 +59,11 @@ var myNumbers = [333, 1, 4, 5, 511, 34, 88, 77, 222];
 var evensArray = []
 function evensOnly() {
   for (i=0; i < myNumbers.length; i++) {
-    if(myNumbers[i] % 2 = 0) {
+    if(myNumbers[i] % 2 === 0) {
       evensArray.push(myNumbers[i])
     }
-    return evensArray
   }
+  return evensArray;
 }
 
 // #9 Using filter(), return only your friends of the array of people below. Assign it to a variable called 'trueFriends'.
@@ -78,20 +78,16 @@ var peopleIknow = [
   { name: "Holly", friend: true }
 ];
 
-for (i in peopleIknow) {
-  if (peopleIknow[i.friend] == true) {
-    trueFriends.push(peopleIknow[i.name])
-  }
-}
-
-
+trueFriends = peopleIknow.filter(x => x.friend)
 
 // #10 Create a function called indexFinder that will loop over an array and return a new array of the indexes of the contents e.g. [243, 123, 4, 12] would return [0,1,2,3]. 
 // Create a new variable called 'indexes' and set it to contain the indexes of randomNumbers.
 let randomNumbers = [1, 3453, 34, 456, 32, 3, 2, 0];
 let indexes = []
-function indexFinder(random_array) {
-  for (i=0, i=random_array.length, i++) {
+function indexFinder(array) {
+  for (i = 0; i < array.length; i++) {
     indexes.push(i);
   }
 }
+
+indexFinder(randomNumbers);
